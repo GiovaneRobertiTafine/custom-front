@@ -1,0 +1,210 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700|Sansita+One);
+
+*,
+*::after,
+*::before {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #302AE6;
+    --secondary-color: #536390;
+    --font-color: #424242;
+    --bg-color: #f7f7f7;
+    --heading-color: #1a1a1a;
+
+    --swapper-border-color: #aaaaaa;
+    --swapper-border-on-color: #302AE6;
+    --swapper-icon-color: var(--swapper-border-on-color);
+
+    --swapper-icon-moon-rotate: rotate(0deg);
+    --swapper-icon-sun-rotate: rotate(-90deg);
+}
+
+/* theme */
+
+[data-swapper-theme="DARK"] {
+    --swapper-border-color: #5f5f5f;
+    --swapper-border-on-color: #2bb394;
+    --swapper-icon-color: var(--swapper-border-on-color);
+}
+
+[data-swapper-rotate="DARK"] {
+    --swapper-icon-moon-rotate: rotate(90deg);
+    --swapper-icon-sun-rotate: rotate(0deg);
+}
+
+[data-theme="ALTO_CONTRASTE"] {
+    --primary-color: #fdf90f;
+    --secondary-color: #fdf90f;
+    --font-color: #f8f8f8;
+    --bg-color: #0a0a0a;
+    --heading-color: #f3f3f3;
+
+    --swapper-border-color: #5f5f5f;
+    --swapper-border-on-color: #5f5f5f;
+    --swapper-icon-color: var(--swapper-border-on-color);
+}
+
+[data-theme="DARK"] {
+    --primary-color: #2bb394;
+    --secondary-color: #31806f;
+    --font-color: #f8f8f8;
+    --bg-color: #272727;
+    --heading-color: #f3f3f3;
+}
+
+/* setters */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+
+    font-family: "Lato",
+        sans-serif;
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: calc(1rem + 0.25vh);
+}
+
+input,
+textarea,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    border-radius: none;
+    -webkit-border-radius: 0;
+}
+
+h1,
+h2,
+h3,
+.h2,
+.h3,
+.h4 {
+    color: var(--heading-color);
+
+    font-family: "Sansita One",
+        serif;
+}
+
+/* components */
+
+.btn {
+    padding: .8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    max-width: max-content;
+    box-shadow: 4px 4px hsl(255, 36%, 17%);
+    text-decoration: none;
+    transition: all 200ms cubic-bezier(1, -0.04, 0, 1.21);
+    cursor: pointer !important;
+
+    &:hover,
+    &:focus {
+        transform: translate(4px, 4px);
+        box-shadow: none;
+
+    }
+}
+
+.button-alto-contraste {
+    cursor: pointer;
+}
+
+.button-swapper {
+    background-color: transparent;
+    background-image: none;
+    border-radius: 9999px;
+    border: 2px solid;
+    cursor: pointer;
+    padding: 0.25rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-color: var(--swapper-border-color);
+    transition: border 0.1s ease;
+    outline: none;
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.button-swapper:hover {
+    border-color: var(--swapper-border-on-color);
+    outline: none;
+
+
+}
+
+.container-icon {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+}
+
+.icon-button-swapper {
+    position: absolute;
+    color: var(--swapper-icon-color);
+    transition: transform 1s ease;
+    transform-origin: 50% 100px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.icon-button-swapper#icon-sun {
+    transform: var(--swapper-icon-sun-rotate);
+}
+
+.icon-button-swapper#icon-moon {
+    transform: var(--swapper-icon-moon-rotate);
+}
+
+
+/* style */
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.post-meta {
+    font-size: 1rem;
+    font-style: italic;
+    display: block;
+    margin-bottom: 4vh;
+    color: var(--secondary-color);
+}
+
+p {
+    margin: 20px 0px 20px 0px;
+}
+
+a {
+    color: var(--primary-color);
+
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+        border-bottom: 3px solid currentColor;
+    }
+}
