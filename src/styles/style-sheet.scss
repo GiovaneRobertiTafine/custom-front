@@ -13,7 +13,7 @@
     --primary-color: #302AE6;
     --secondary-color: #536390;
     --font-color: #424242;
-    --bg-color: #f7f7f7;
+    --font-disabled: #a7a7a7;
     --heading-color: #1a1a1a;
 
     --swapper-border-color: #aaaaaa;
@@ -41,6 +41,7 @@
     --primary-color: #fdf90f;
     --secondary-color: #fdf90f;
     --font-color: #f8f8f8;
+    --font-disabled: #5c5c5c;
     --bg-color: #0a0a0a;
     --heading-color: #f3f3f3;
 
@@ -53,6 +54,7 @@
     --primary-color: #2bb394;
     --secondary-color: #31806f;
     --font-color: #f8f8f8;
+    --font-disabled: #707070;
     --bg-color: #272727;
     --heading-color: #f3f3f3;
 }
@@ -62,17 +64,18 @@
 body {
     background-color: var(--bg-color);
     color: var(--font-color);
-
+    font-size: 100%;
     font-family: "Lato",
         sans-serif;
     max-width: 90%;
     margin: 0 auto;
-    font-size: calc(1rem + 0.25vh);
+
 }
 
 input,
 textarea,
-button {
+button,
+p {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
@@ -82,6 +85,7 @@ button {
     -moz-appearance: none;
     border-radius: none;
     -webkit-border-radius: 0;
+
 }
 
 h1,
@@ -91,7 +95,7 @@ h3,
 .h3,
 .h4 {
     color: var(--heading-color);
-
+    font-size: 1.5em;
     font-family: "Sansita One",
         serif;
 }
@@ -118,6 +122,7 @@ h3,
 }
 
 .button-alto-contraste {
+    font-size: initial !important;
     cursor: pointer;
 }
 
@@ -185,7 +190,7 @@ nav {
 }
 
 .post-meta {
-    font-size: 1rem;
+    font-size: 0.85em;
     font-style: italic;
     display: block;
     margin-bottom: 4vh;
@@ -207,4 +212,10 @@ a {
     &:focus {
         border-bottom: 3px solid currentColor;
     }
+}
+
+#btn-fonte-menos,
+#btn-fonte-mais {
+    font-size: initial !important;
+    cursor: pointer;
 }
